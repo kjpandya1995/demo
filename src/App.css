@@ -1,0 +1,10 @@
+.register-contaneir {
+  max-width: 500px;
+  width: 100%;
+}
+.login-section {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
