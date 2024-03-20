@@ -1,25 +1,26 @@
-import React , { Component } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Register from "./Components/Register";
 import List from "./Components/List";
+import Task from './Components/Task';
 
 export class App extends Component {
   constructor(props) {
     super(props)
-  
+
     this.state = {
-       isRegistered: false,
+      isRegistered: false,
       //  name:null,
-       email:null,
-       password:null,
+      email: null,
+      password: null,
     };
   }
-  
+
   registrationHandler = (event) => {
     // const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
-    this.setState({email,password, isRegistered: true});
+    this.setState({ email, password, isRegistered: true });
     event.preventDefault();
 
   };
@@ -29,8 +30,21 @@ export class App extends Component {
   render() {
     return (
       <div>
-        { this.state.isRegistered ? <List></List> : <Register submit={this.registrationHandler}></Register>}
+        {this.state.isRegistered ? (
+          <>
+            <List></List>
+            <Task></Task>
+            <Task></Task>
+            <Task></Task>
+            <Task></Task>
+          </>
+        ) : (
+        <Register submit={this.registrationHandler}></Register>
+        )}
+
+
       </div>
+
     );
   }
 }
