@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component, useEffect, useState } from "react";
+import "./App.css";
 import Register from "./Components/Register";
 import List from "./Components/List";
-import Task from './Components/Task';
+import Task from "./Components/Task";
 
 export class App extends Component {
   constructor(props) {
@@ -23,26 +23,33 @@ export class App extends Component {
     this.setState({ email, password, isRegistered: true });
     event.preventDefault();
 
-  };
-
-
+  }
 
   render() {
+
+    const [tasks, setTasks] = useState(0);
+    useEffect(() => {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }, [tasks]);
+    function addTask(name) {
+      setTasks(prev => [...prev, { name: name, done: false }]);
+    }
+
     return (
-      <div>
-        {this.state.isRegistered ? (
-          <>
-            <List></List>
-            <Task></Task>
-            <Task></Task>
-            <Task></Task>
-            <Task></Task>
-          </>
-        ) : (
-        <Register submit={this.registrationHandler}></Register>
-        )}
+      <div className="main">
+        <div className="container register-contaneir card pt-3 pb-3">
+          {this.state.isRegistered ? (
+            <>
+              <List onAdd={addTask}></List>
+              {tasks.map(task => (
+                <Task {...task} />
+              ))}
+            </>
+          ) : (
+            <Register submit={this.registrationHandler}></Register>
+          )}
 
-
+        </div>
       </div>
 
     );

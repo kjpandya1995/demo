@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
 
 export default function Register(props) {
     return (
-        <div className="login-section">
-        <div className="container card p-3 mt-2 register-contaneir">
+        <div className="">
             <h1 className="text-center">Login</h1>
             <form onSubmit={props.submit}>
                 {/* <div className="from-group">
@@ -21,6 +20,6 @@ export default function Register(props) {
                 <button type="submit" className="btn btn-primary mt-3">Login</button>
             </form>
         </div>
-        </div>
+        
     )
 }

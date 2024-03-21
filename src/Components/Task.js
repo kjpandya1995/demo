@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import Checkbox from "./Checkbox";
 
-export default function Task() {
+export default function Task({name,done}) {
   return (
-    <div >
-          <input type="checkbox"/>
-            text check
-          
-        </div>
-  )
+    <div className="task">
+      
+      <Checkbox defaultChecked={done} />
+       {name}
+
+    </div>
+  );
 }
