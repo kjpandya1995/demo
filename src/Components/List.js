@@ -10,12 +10,13 @@ export default function List({onAdd}) {
   }
   return (
       <div>
-        <form onSubmit={handleSubmit}>
-          <button>+</button>
+        <h1 className="text-center">Todo List</h1>
+        <form className="todo_div" onSubmit={handleSubmit}>
           <input type="text" 
           value={taskName}
           onChange={ev => setTaskName(ev.target.value)}
           placeholder="your next task..." />
+          <button>+</button>
         </form>
       </div>
   );
