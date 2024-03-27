@@ -5,10 +5,6 @@ export default function Register(props) {
         <div className="">
             <h1 className="text-center">Login</h1>
             <form onSubmit={props.submit}>
-                {/* <div className="from-group">
-                    <label htmlFor="name">Name</label>
-                    <input type="text" name="name" required className="form-control" />
-                </div> */}
                 <div className="from-group mt-3">
                     <label htmlFor="email">Email:</label>
                     <input type="text" name="email" required className="form-control" />
@@ -20,6 +16,6 @@ export default function Register(props) {
                 <button type="submit" className="btn btn-primary mt-3">Login</button>
             </form>
         </div>
-        
+
     )
 }

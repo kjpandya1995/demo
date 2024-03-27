@@ -1,10 +1,12 @@
-*{
+* {
   box-sizing: border-box;
 }
+
 .register-container {
   max-width: 500px;
   width: 100%;
 }
+
 .main {
   height: 100vh;
   display: flex;
@@ -12,22 +14,26 @@
   justify-content: center;
   background-color: #f4f4f4;
 }
+
 .register-contaneir {
   max-width: 500px;
   width: 100%;
   margin: 0 auto;
 }
+
 .login-section {
   display: flex;
   align-items: center;
   height: 100vh;
   justify-content: center;
 }
+
 .checkbox {
   display: flex;
   align-items: center;
 }
-.task{
+
+.task {
   background-color: #c4c4c4;
   padding: 6px;
   margin-top: 5px;
@@ -40,15 +46,18 @@
   padding-left: 8px;
 
 }
+
 .task svg {
   height: 20px;
   margin-right: 4px;
-  
+
 }
+
 .task.done {
   opacity: 0.5;
   text-decoration: line-through;
 }
+
 button.trash {
   background: none;
   border: 0;
@@ -56,16 +65,19 @@ button.trash {
   right: 0;
   cursor: pointer;
 }
-button.trash svg{
+
+button.trash svg {
   fill: #000;
   height: 14px;
 }
-form.todo_div{
+
+form.todo_div {
   border: 2px solid #30313d;
   border-radius: 8px;
   padding: 5px;
   display: flex;
 }
+
 form.todo_div input[type="text"] {
   background: none;
   border: 0;
@@ -73,15 +85,18 @@ form.todo_div input[type="text"] {
   display: block;
   width: 100%;
 }
+
 form.todo_div button {
   background-color: #61dafb;
   border: 0;
   border-radius: 4px;
   cursor: pointer;
 }
+
 form.todo_section {
   width: 100%;
 }
+
 :focus-visible {
   outline: -webkit-focus-ring-color auto 0px;
 }
