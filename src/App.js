@@ -5,14 +5,15 @@ import List from "./Components/List";
 import Task from "./Components/Task";
 
 function App() {
+
     const [isRegistered, setIsRegistered] = useState(false);
-    const [, setEmail] = useState(null);
-    const [, setPassword] = useState(null);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const [tasks, setTasks] = useState([]);
 
     const registrationHandler = (event) => {
-        setEmail(event.target.email.value);
-        setPassword(event.target.password.value);
+        setEmail(email);
+        setPassword(password);
         setIsRegistered(true);
         event.preventDefault();
     };
@@ -60,6 +61,8 @@ function App() {
                     </>
                 ) : (
                     <Register submit={registrationHandler}></Register>
+                    // <Register></Register>
+
                 )}
             </div>
         </div>

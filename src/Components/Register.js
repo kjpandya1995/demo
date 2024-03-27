@@ -7,7 +7,7 @@ export default function Register(props) {
             <form onSubmit={props.submit}>
                 <div className="from-group mt-3">
                     <label htmlFor="email">Email:</label>
-                    <input type="text" name="email" required className="form-control" />
+                    <input type="email" name="email" required className="form-control" />
                 </div>
                 <div className="from-group mt-3">
                     <label htmlFor="password">Password:</label>
