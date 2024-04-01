@@ -15,7 +15,7 @@ export default function List({ onAdd }) {
         <input type="text"
           value={taskName}
           onChange={ev => setTaskName(ev.target.value)}
-          placeholder="your next task..." />
+          placeholder="your next task..." required />
         <button>+</button>
       </form>
     </div>

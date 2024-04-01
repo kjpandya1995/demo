@@ -4,6 +4,7 @@ import Register from "./Components/Register";
 import List from "./Components/List";
 import Task from "./Components/Task";
 
+
 function App() {
 
     const [isRegistered, setIsRegistered] = useState(false);
@@ -47,7 +48,7 @@ function App() {
     }
 
     return (
-        <div className="main">
+        <><div className="main">
             <div className="container register-container card pt-3 pb-3">
 
                 {isRegistered ? (
@@ -62,10 +63,9 @@ function App() {
                 ) : (
                     <Register submit={registrationHandler}></Register>
                     // <Register></Register>
-
                 )}
             </div>
-        </div>
+        </div></>
     );
 };
 
