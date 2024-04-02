@@ -7,14 +7,6 @@
   width: 100%;
 }
 
-.main {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f4f4f4;
-}
-
 .register-contaneir {
   max-width: 500px;
   width: 100%;
@@ -34,28 +26,43 @@
 }
 
 .task {
-  background-color: #c4c4c4;
-  padding: 6px;
+  background-color: #30313D;
+  border-radius: 10px;
+  padding: 5px 9px;
   margin-top: 5px;
   display: flex;
   align-items: center;
-  position: relative;
   transition: opacity .3s linear;
-  padding-right: 30px;
-  border-radius: 8px;
-  padding-left: 8px;
-
+  position: relative;
 }
 
 .task svg {
+  /* height: 20px;
+  margin-right: 4px; */
   height: 20px;
-  margin-right: 4px;
+  margin-right: 6px;
+  fill: #61DAFB;
+}
 
+.form-control {
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.form-control:focus {
+  color: #fff;
+  box-shadow: none;
 }
 
 .task.done {
   opacity: 0.5;
   text-decoration: line-through;
+}
+
+.task-name {
+  word-break: break-word;
+  padding-right: 20px;
+  text-transform: capitalize;
 }
 
 button.trash {
@@ -64,26 +71,42 @@ button.trash {
   position: absolute;
   right: 0;
   cursor: pointer;
+  pointer-events: none;
+
+}
+
+.task.done .trash {
+  pointer-events: auto;
 }
 
 button.trash svg {
-  fill: #000;
+  fill: #888;
   height: 14px;
 }
 
-form.todo_div {
+.task input {
+  border: 2px solid #555;
+  border-radius: 5px;
+  padding: 2px 4px;
+}
+
+.todo_div {
   border: 2px solid #30313d;
-  border-radius: 8px;
+  border-radius: 3px;
   padding: 5px;
   display: flex;
 }
 
-form.todo_div input[type="text"] {
+.todo_div input[type="text"],
+.todo_div input[type="email"],
+.todo_div input[type="password"] {
   background: none;
   border: 0;
   padding: 0 6px;
   display: block;
   width: 100%;
+  color: #ccc;
+  text-transform: capitalize;
 }
 
 form.todo_div button {

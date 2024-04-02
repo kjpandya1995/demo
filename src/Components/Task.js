@@ -2,6 +2,7 @@ import React from "react";
 import Checkbox from "./Checkbox";
 
 export default function Task({ name, done, onToggle, onTrash }) {
+
   return (
     <div className={'task ' + (done ? 'done' : '')}>
 

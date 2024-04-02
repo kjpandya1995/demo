@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Register from "./Components/Register";
 import List from "./Components/List";
@@ -19,14 +19,6 @@ function App() {
         event.preventDefault();
     };
 
-    useEffect(() => {
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-    }, [tasks]);
-
-    useEffect(() => {
-        const tasks = JSON.parse(localStorage.getItem('tasks'));
-        setTasks(tasks);
-    }, []);
 
     const addTask = (name) => {
         setTasks(prevTasks => [...prevTasks, { name: name, done: false }]);
@@ -49,7 +41,7 @@ function App() {
 
     return (
         <><div className="main">
-            <div className="container register-container card pt-3 pb-3">
+            <div className="container register-container pt-3 pb-3">
 
                 {isRegistered ? (
                     <>

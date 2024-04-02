@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import GlobalStyle from "./Style/GlobalStyle";
 
 export default function List({ onAdd }) {
   const [taskName, setTaskName] = useState('');
@@ -9,7 +10,7 @@ export default function List({ onAdd }) {
     setTaskName("");
   }
   return (
-    <div>
+    <><GlobalStyle /><div>
       <h1 className="text-center">Todo List</h1>
       <form className="todo_div" onSubmit={handleSubmit}>
         <input type="text"
@@ -19,5 +20,6 @@ export default function List({ onAdd }) {
         <button>+</button>
       </form>
     </div>
+    </>
   );
 }

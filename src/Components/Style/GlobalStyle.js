@@ -1,19 +1,22 @@
-import creatGlobalStyle from "styled-components";
 
+import { createGlobalStyle } from "styled-components";
 
-const GlobalStyle = creatGlobalStyle`
-
-body {
-    background:red ;
-}
-h1 {
-    font-size: 72px;
-    background: -webkit-linear-gradient(#eee, #333);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+const GlobalStyle = createGlobalStyle`
+ body {
+    background-color: #17181f;
+    color: #ddd;
+ }
+  h1 {
+    font-size: 50px;
+    color: #61dafb;
+  }
+  .main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
 `;
 
-
 export default GlobalStyle;
-
