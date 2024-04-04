@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
-import Register from "./Components/Register";
-import List from "./Components/List";
-import Task from "./Components/Task";
+import Register from "./Components/Register/js/Register";
+import List from "./Components/TodoList/js/List";
+import Task from "./Components/TodoTask/js/Task";
+import Container from "./Components/Container";
 
 
 function App() {
@@ -41,7 +42,7 @@ function App() {
 
     return (
         <><div className="main">
-            <div className="container register-container pt-3 pb-3">
+            <Container className="pt-3 pb-3">
 
                 {isRegistered ? (
                     <>
@@ -49,14 +50,14 @@ function App() {
                         {tasks.map((task, index) => (
                             <Task key={task.name} {...task}
                                 onTrash={() => removeTask(index)}
-                                onToggle={done => updateTaskDone(index, done)} />
+                                onToggle={done => updateTaskDone(index, done)} 
+                                />
                         ))}
                     </>
                 ) : (
                     <Register submit={registrationHandler}></Register>
-                    // <Register></Register>
                 )}
-            </div>
+            </Container>
         </div></>
     );
 };
