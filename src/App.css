@@ -1,32 +1,21 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   background-color: #17181f;
   color: #ddd;
 }
+
 h1 {
   font-size: 50px;
   color: #61dafb;
 }
+
 .main {
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-
-.register-contaneir {
-  max-width: 500px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.login-section {
-  display: flex;
-  align-items: center;
-  height: 100vh;
   justify-content: center;
 }
 
@@ -37,7 +26,7 @@ h1 {
 
 .task {
   background-color: #30313D;
-  border-radius: 10px;
+  border-radius: 3px;
   padding: 5px 9px;
   margin-top: 5px;
   display: flex;
@@ -47,42 +36,14 @@ h1 {
 }
 
 .task svg {
-  /* height: 20px;
-  margin-right: 4px; */
   height: 20px;
   margin-right: 6px;
   fill: #61DAFB;
 }
 
-.form-control {
-  color: #ccc;
-  line-height: 1.8;
-}
-
-.form-control:focus {
-  color: #fff;
-  box-shadow: none;
-}
-
 .task.done {
   opacity: 0.5;
   text-decoration: line-through;
-}
-
-.task-name {
-  word-break: break-word;
-  padding-right: 20px;
-  text-transform: capitalize;
-}
-
-button.trash {
-  background: none;
-  border: 0;
-  position: absolute;
-  right: 0;
-  cursor: pointer;
-  pointer-events: none;
-
 }
 
 .task.done .trash {
@@ -94,42 +55,14 @@ button.trash svg {
   height: 14px;
 }
 
-.task input {
-  border: 2px solid #555;
-  border-radius: 5px;
-  padding: 2px 4px;
+:focus-visible {
+  outline: -webkit-focus-ring-color auto 0px;
 }
 
-.todo_div {
-  border: 2px solid #30313d;
-  border-radius: 3px;
-  padding: 5px;
+.todo_list {
   display: flex;
 }
 
-.todo_div input[type="text"],
-.todo_div input[type="email"],
-.todo_div input[type="password"] {
-  background: none;
-  border: 0;
-  padding: 0 6px;
-  display: block;
-  width: 100%;
-  color: #ccc;
-  text-transform: capitalize;
-}
-
-form.todo_div button {
-  background-color: #61dafb;
-  border: 0;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-form.todo_section {
-  width: 100%;
-}
-
-:focus-visible {
-  outline: -webkit-focus-ring-color auto 0px;
+.todo_list button {
+  width: auto;
 }

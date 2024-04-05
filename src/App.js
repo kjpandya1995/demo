@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
 import Register from "./Components/Register/js/Register";
-import List from "./Components/TodoList/js/List";
-import Task from "./Components/TodoTask/js/Task";
+import List from "./Components/TodoIndex/js/Todoindex";
+import Task from "./Components/TodoList/js/Task";
 import Container from "./Components/Container";
 
 
@@ -41,24 +41,23 @@ function App() {
     }
 
     return (
-        <><div className="main">
+        <div className="main">
             <Container className="pt-3 pb-3">
-
                 {isRegistered ? (
                     <>
                         <List onAdd={addTask}></List>
                         {tasks.map((task, index) => (
                             <Task key={task.name} {...task}
                                 onTrash={() => removeTask(index)}
-                                onToggle={done => updateTaskDone(index, done)} 
-                                />
+                                onToggle={done => updateTaskDone(index, done)}
+                            />
                         ))}
                     </>
                 ) : (
                     <Register submit={registrationHandler}></Register>
                 )}
             </Container>
-        </div></>
+        </div>
     );
 };
 

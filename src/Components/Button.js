@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
- const Button = styled.button`
+const Button = styled.button`
   /* Common styles for all buttons */
   font-size: 1em;
   padding: 0.25em 1em;
@@ -17,10 +17,18 @@ import styled from "styled-components";
         background-color: #fff;
         color: #333;
   }
+  &.trash {
+  background: none;
+  border: 0;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  pointer-events: none;
+  width: auto;
+  }
   
   `
-  export default Button;
-  
+export default Button;
 
 
- 
+
