@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
-import Register from "./Components/Register";
-import List from "./Components/List";
-import Task from "./Components/Task";
+import Register from "./Components/Register/js/Register";
+import List from "./Components/TodoIndex/js/Todoindex";
+import Task from "./Components/TodoList/js/Task";
+import Container from "./Components/Container";
+
 
 function App() {
 
@@ -18,14 +20,6 @@ function App() {
         event.preventDefault();
     };
 
-    useEffect(() => {
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-    }, [tasks]);
-
-    useEffect(() => {
-        const tasks = JSON.parse(localStorage.getItem('tasks'));
-        setTasks(tasks);
-    }, []);
 
     const addTask = (name) => {
         setTasks(prevTasks => [...prevTasks, { name: name, done: false }]);
@@ -48,23 +42,21 @@ function App() {
 
     return (
         <div className="main">
-            <div className="container register-container card pt-3 pb-3">
-
+            <Container className="pt-3 pb-3">
                 {isRegistered ? (
                     <>
                         <List onAdd={addTask}></List>
                         {tasks.map((task, index) => (
                             <Task key={task.name} {...task}
                                 onTrash={() => removeTask(index)}
-                                onToggle={done => updateTaskDone(index, done)} />
+                                onToggle={done => updateTaskDone(index, done)}
+                            />
                         ))}
                     </>
                 ) : (
                     <Register submit={registrationHandler}></Register>
-                    // <Register></Register>
-
                 )}
-            </div>
+            </Container>
         </div>
     );
 };
